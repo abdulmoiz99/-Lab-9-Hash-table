@@ -10,7 +10,12 @@ public class Library {
     }
 
     public void addBook(Book b) {
-        h.put(b.getISBN(), b);
+        if (h.containsKey(b.getISBN())) {
+            System.out.println("Book has already been added to the library");
+        } else {
+            h.put(b.getISBN(), b);
+            System.out.println("Book added successfully");
+        }
     }
 
     public void borrowBook(String ISBN) {
